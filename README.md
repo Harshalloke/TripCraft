@@ -1,6 +1,4 @@
 
-
-````markdown
 # 🌍 TripCraft — AI Travel Planner
 
 Plan smarter trips with **Gemini AI**.  
