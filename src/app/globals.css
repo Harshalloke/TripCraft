@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Leaflet styles */
+@import "leaflet/dist/leaflet.css";
+
+
+/* 👇 Optional: tell Tailwind where to look for class names */
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +31,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* ---- Fix native <select> popup contrast ---- */
+select {
+  color: #fff;                 /* closed state text (in the field) */
+  background-color: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* When the dropdown menu opens, options use these styles */
+select option,
+select optgroup {
+  color: #111 !important;      /* make menu text dark */
+  background: #fff !important; /* light menu background */
+}
+
+/* Optional: better focus ring for dark UI */
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.28);
+  border-color: rgba(255,255,255,0.35);
 }

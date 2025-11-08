@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TripCraft — AI Travel Planner
 
-## Getting Started
+Plan smarter trips with **Gemini**: day-by-day itineraries, costs, packing list, and direct **Google** links (Hotels, Restaurants, Attractions, Flights). No paid APIs.
 
-First, run the development server:
+## ✨ Features
+
+- 🔮 **AI itineraries** tailored to dates, group size, interests, and pace  
+- 💰 **Cost breakdown** with per-person estimate (INR-ready)  
+- 🗺️ **Direct Google links** for hotels, food, attractions, flights & driving directions  
+- 🧳 **Packing list** + AI tips  
+- 🧼 **Glassmorphism UI** with professional typography  
+- 🔒 **Privacy-first:** only your Gemini key, no paid services
+
+## 🧱 Tech Stack
+
+- **Next.js (App Router)** + React
+- **Tailwind CSS**
+- **Client-side Gemini API** (via `/api/ai/plan`)
+- No server DB required
+
+## 🖥️ Local Setup
 
 ```bash
+git clone https://github.com/<your-username>/tripcraft.git
+cd tripcraft
+npm install
+
+Create a .env.local:
+GEMINI_API_KEY=your_gemini_key_here
+
+Run dev:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build & preview:
+npm run build
+npm start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔑 Environment Variables
+Key	Required	Description
+GEMINI_API_KEY	✅	Your Google Gemini API key
 
-## Learn More
+Never commit .env* files.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+app/
+  layout.tsx           # Root layout (server)
+  page.tsx             # Landing page (slideshow hero)
+  plan/page.tsx        # Planner (form + Gemini call)
+  trip/[id]/page.tsx   # Itinerary, costs, quick links
+  about/page.tsx       # About (glass UI)
+  contact/page.tsx     # Contact (mailto)
+components/
+  Header.tsx           # Sticky glass header (client)
+  PeopleBudgetForm.tsx # Form with steppers + dropdown
+  CostSummary.tsx      # Cost breakdown widget
+lib/
+  deeplinks.ts         # Google links helpers
+  costs.ts             # INR estimates
+  store.ts             # Zustand store for trip data
+  types.ts             # TypeScript types
+public/
+  # Optional images if you want local assets
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🚀 Deploy
+Vercel (recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub
+
+Import the repo in Vercel
+
+Add GEMINI_API_KEY in Project → Settings → Environment Variables
+
+Deploy
+
+CLI
+
+npm i -g vercel
+vercel
+vercel --prod
+
+
+🔧 Scripts
+
+dev — start dev server
+
+build — production build
+
+start — run production server
+
+🧰 Notes
+
+If you removed all image fetching, you can delete any /api/place-photo route.
+
+For dropdowns on dark UI, ensure <option class="text-black"> to prevent white-on-white menus (Chrome/Edge).
+
+Printing: we include print styles to keep contrast when exporting to PDF.
+
+🛡️ License
+
+MIT © 2025 TripCraft
+
+---
+
+If you want, I can also add a `.env.example`, a GitHub Actions workflow for automatic lint/build, or a custom domain setup for Vercel.
+::contentReference[oaicite:0]{index=0}
