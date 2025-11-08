@@ -1,5 +1,9 @@
 
-# 🌍 TripCraft — AI Travel Planner **[Live Demo("https://trip-craft-five.vercel.app/")]**
+# 🌍 TripCraft — AI Travel Planner 
+
+[![Live Demo](https://img.shields.io/badge/🔗%20Live%20Demo-TripCraft-blueviolet?style=for-the-badge)](https://trip-craft-five.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
 Plan smarter trips with **Gemini AI**.  
 Get day-by-day itineraries, cost estimates, AI travel tips, and direct **Google links** — all without paid APIs.
