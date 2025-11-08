@@ -165,10 +165,3 @@ Built with ❤️ by **Harshal Loke**
 
 ```
 
----
-
-✅ Just copy everything above ⬆️ into your **`README.md`** file.  
-When you push this to GitHub, it will render perfectly with emojis, tables, and syntax-highlighted code.  
-
-Would you like me to include **badges** (like “Built with Next.js” and “Deployed on Vercel”)? They make your GitHub page look more professional.
-```
